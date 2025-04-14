@@ -1,3 +1,4 @@
+% templates/preamble.tex
 \documentclass[letterpaper, 12pt, final]{article}
 % Page Layout configurations.
 \usepackage[margin=2.5cm]{geometry} % Adjust page margins if needed
@@ -15,23 +16,12 @@
 \captionsetup[figure]{font=small,labelfont=bf}
 \usepackage{float} % Improved floating for Tables and figures
 
-% Code formatting
-\usepackage[outputdir=build]{minted} % For code style
-\setminted{
-    breaklines=true,
-    linenos,
-    frame=lines,
-    framesep=2mm,
-    baselinestretch=1.2,
-fontsize=\footnotesize}
-\usepackage{listings} % For code style
-
 % Additional features and utilities.
 \usepackage[obeyDraft]{todonotes}
 \setlength{\marginparwidth}{2cm}
 \usepackage{draftwatermark}
 \usepackage{authblk} % for better author block
-\usepackage{xcolor}	% for colors
+\usepackage{xcolor}    % for colors
 
 % Date formats
 \usepackage[showdow, en-US]{datetime2}
@@ -48,29 +38,4 @@ fontsize=\footnotesize}
 \newcommand{\doclink}[2]{\href{#1}{#2}\footnote{\url{#1}}}
 
 \newcommand{\module}[1]{\href{https://drupal.org/project/#1}{drupal/{#1}}}
-% Minted style in the Dracula universe.
-\definecolor{DraculaBg}{HTML}{282a36}  % Background color
-
-\title{OSU Drupal Updates}
-\author{Matthew Brabham}
-\date{\today}
-\begin{document}
-\maketitle
-\tableofcontents
-\newpage
-\input{src/20240827.tex}
-\newpage
-\input{src/20240830.tex}
-\newpage
-\input{src/20240927.tex}
-\newpage
-\input{src/20241023.tex}
-\newpage
-\input{src/20241112.tex}
-\newpage
-\input{src/20241113.tex}
-\newpage
-\input{src/20241120.tex}
-\newpage
-\input{src/20241217.tex}
-\end{document}
+\newcommand{\github}[1]{\href{https://github.com/#1}{#1}}
