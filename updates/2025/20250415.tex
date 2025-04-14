@@ -1,0 +1,117 @@
+\input{templates/preamble}
+\title{OSU Drupal Updates}
+\author{Matthew Brabham}
+\date{April 15, 2025}
+\begin{document}
+    \maketitle
+    \tableofcontents
+
+
+    \section{Updates for April 15, 2025}
+    The following updates will be pushed to OSU Drupal Development Tuesday, April 15\textsuperscript{th} 2025.
+    Barring any issues, we will deploy this update to Production on Thursday, April 17\textsuperscript{th} 2025.
+
+    \subsection{What's New}\label{subsec:what's-new}
+
+    \subsubsection{Site wide Alerts.}
+    A new role is added to create and manage alerts on sites.
+    Alerts can be Published/Unpublished on a schedule and limited to pages
+
+    \subsubsection{Responsive Table filter}
+    All HTML Tables created in CKEditor will be wrapper in a responsive div.
+    This will enhance the usability of tables on mobile/tablet devices.
+
+    \subsubsection{Fontawesome Version}
+    Fontawesome has been updated to 6.7.2 and brings many updates to icons.
+
+    \subsection{What's Changing}\label{subsec:what's-chaning}
+
+    \subsubsection{OSU Madrone}
+    Minor update to footer links.
+
+    \subsubsection{OSU Roles}
+    Updates permissions on Theme settings.
+
+    \subsubsection{OSU Groups}
+    Update permissions for nonexistent content types.
+
+    \subsubsection{Drupal Charts}
+
+    \paragraph{Bug}
+    \begin{itemize}
+        \item \href{https://www.drupal.org/i/3517328}{\#3517328} by hmdnawaz, bluegeek9: file\_validate\_extensions and file\_validate\_size are removed in Drupal 11
+    \end{itemize}
+
+    \paragraph{Feature}
+    \begin{itemize}
+        \item \href{https://www.drupal.org/i/3516989}{\#3516989} by andileco, nikathone: Add a views field that can output data arrays of various lengths
+        \item \href{https://www.drupal.org/i/3391197}{\#3391197} by andileco, nikathone, bluegeek9: Support additional common chart types (area range, boxplot, candlestick, heatmap)
+    \end{itemize}
+
+    \paragraph{Task}
+    \begin{itemize}
+        \item \href{https://www.drupal.org/i/3516229}{\#3516229} by bluegeek9: Remove \verb|charts.install|
+        \item \href{https://www.drupal.org/i/3515897}{\#3515897}: Add Code Coverage metrics
+        \item \href{https://www.drupal.org/i/3517543}{\#3517543} by bluegeek9, andileco: Issues reported by eslint
+        \item \href{https://www.drupal.org/i/3517539}{\#3517539} by bluegeek9: Issues reported by CSpell
+    \end{itemize}
+
+    \subsubsection{Drupal Editoria11y}
+    \begin{itemize}
+        \item Adds bulk action buttons to tips to dismiss multiple similar items at once.
+        \item Adds ability to\href{https://www.drupal.org/project/editoria11y/issues/3357207}{disable individual tests via Admin GUI}.
+        Thank you, @nmillin!
+        \item Adds options for auto shadow DOM detection to resolve\href{https://www.drupal.org/project/editoria11y/issues/3495127}{3495127: Web component flagged as missing text}.
+        \item Added param to control whether to refresh the on-screen results
+        after dynamic content changes (e.g., Views AJAX events, opening accordions, and switching tab panels).
+        This came out of a \textit{lot} of performance improvements and bug fixes from the data and reports regarding \href{https://www.drupal.org/project/editoria11y/issues/3501807}{page timeouts} sent in by @jastraat.
+        Thank you!
+        \item Empty first table header cells are now flagged as manual checks rather than errors.
+        \item Name calculation is now a little closer to the full accessible name calculation for null aria labels, title attributes, and CSS pseudocontent.
+        \item New config option to list containers that hide visual overflow, to prevent buttons from being drawn offscreen.
+        \item Hopefully, addresses \href{https://www.drupal.org/project/editoria11y/issues/3515376}{Dashboard sync fails for entity types with long names} and Installation fails due to route not found
+    \end{itemize}
+
+    \subsubsection{Drupal Link Purpose}
+    The library adds a span to prevent a line break between the last word of the link and the icon.
+    This can cause a horizontal scrollbar to appear if the last word of the link is longer than the page -- e.g., someone linking a very, very long URL, which is BAD, but we want the broken site to be their fault, not ours.
+
+    The library now checks and does not add the noBreak span if the last word in the link is longer than 30 characters (``antidisestablishmentarianism'' is 28).
+
+    \subsubsection{Drupal Views RSS}
+    \begin{itemize}
+        \item \href{https://www.drupal.org/project/views_rss/issues/3488355}{\#3488355: Test with drupal/video\_embed\_field 3.x for Drupal 11 compatibility}
+        \item \href{https://www.drupal.org/project/views_rss/issues/3488406}{\#3488406: Convert Functional test to a Kernel test}
+        \item \href{https://www.drupal.org/project/views_rss/issues/3488367}{\#3488367: Raise minimum Drupal version to 10.3 and test on Gitlab}
+        \item \href{https://www.drupal.org/project/views_rss/issues/3499741}{\#3499741: Attempting to use RSS Category results in php error}
+    \end{itemize}
+
+    \subsection{Full changelog}\label{subsec:full-changelog}
+    \begin{itemize}
+        \item - Removing illuminate/collections (v11.44.2)
+        \item - Removing illuminate/conditionable (v11.44.2)
+        \item - Removing illuminate/contracts (v11.44.2)
+        \item - Removing illuminate/macroable (v11.44.2)
+        \item - Upgrading aws/aws-sdk-php (3.342.20 => 3.342.27)
+        \item - Upgrading doctrine/deprecations (1.1.4 => 1.1.5)
+        \item - Upgrading \module{charts} (5.1.4 => 5.1.5)
+        \item - Upgrading \module{charts\_highcharts} (5.1.4 => 5.1.5)
+        \item - Upgrading \module{editoria11y} (2.2.4 => 2.2.6)
+        \item - Upgrading \module{linkpurpose} (1.0.15 => 1.0.16)
+        \item - Upgrading \module{views\_rss} (2.3.0 => 2.4.0)
+        \item - Upgrading drush/drush (13.4.0 => 13.5.1)
+        \item - Upgrading e0ipso/shaper (1.2.5 => 1.2.7)
+        \item - Upgrading firebase/php-jwt (v6.11.0 => v6.11.1)
+        \item - Upgrading laravel/prompts (v0.1.25 => v0.3.5)
+        \item - Upgrading mglaman/phpstan-drupal (1.3.4 => 1.3.6)
+        \item - Upgrading npm-asset/dompurify (3.2.4 => 3.2.5)
+        \item - Upgrading open-telemetry/sdk (1.2.2 => 1.2.3)
+        \item - Upgrading \github{osu-wams/madrone} (1.3.6 => 1.3.7)
+        \item - Upgrading \github{osu-wams/osu\_groups} (2.1.4 => 2.1.5)
+        \item - Upgrading \github{osu-wams/osu\_roles} (1.0.5 => 1.0.6)
+        \item - Upgrading \github{osu-wams/osu\_standard} (1.1.19 => 1.1.20)
+        \item - Upgrading phpdocumentor/reflection-docblock (5.6.1 => 5.6.2)
+        \item - Upgrading slevomat/coding-standard (8.16.2 => 8.17.0)
+        \item - Upgrading squizlabs/php\_codesniffer (3.12.0 => 3.12.2)
+    \end{itemize}
+\end{document}
